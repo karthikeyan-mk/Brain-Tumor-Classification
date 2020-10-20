@@ -1,5 +1,3 @@
-from IPython import get_ipython
-from IPython.display import clear_output
 import numpy as np
 import os
 from tensorflow.keras.models import Sequential
@@ -19,7 +17,7 @@ os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 import tensorflow as tf
-tf.test.is_gpu_available()
+print(tf.test.is_gpu_available())
 
 # ## Loading the data
 x_train = np.load("train_data.npy")
@@ -111,6 +109,7 @@ print(turner.results_summary())
 model = turner.get_best_models()[0]
 print(model.summary())
 model.save("HP_model.h5")
+
 print(turner.get_best_hyperparameters()[0].values)
 hps = turner.oracle.get_best_trials(num_trials=1)[0].hyperparameters
 

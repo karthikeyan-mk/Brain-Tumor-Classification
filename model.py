@@ -12,7 +12,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # %%
-tf.test.is_gpu_available()
+print(tf.test.is_gpu_available())
 
 
 # %%
@@ -106,7 +106,7 @@ model.add(Dense(units=4, activation='sigmoid'))
 
 
 # %%
-model.summary()
+print(model.summary())
 
 
 # %%
@@ -136,7 +136,7 @@ history = model.fit(x_train, y_train,
 
 # %%
 model.save("custom_cnn.h5")
-model.save_weights("custom_cnn_weights.h5")
+#model.save_weights("custom_cnn_weights.h5")
 
 
 # %%

@@ -79,7 +79,7 @@ for img in test:
 
 
 x_test = np.asarray(x_test)
-x_test.shape
+print(x_test.shape)
 # saves the image array in npy file
 np.save("test_data.npy", x_test)
 
